@@ -7,14 +7,11 @@ from pathlib import Path
 import environ
 
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
-# studyabroadbackend/
-APPS_DIR = BASE_DIR / "studyabroadbackend"
-env = environ.Env()
 
-READ_DOT_ENV_FILE = env.bool("DJANGO_READ_DOT_ENV_FILE", default=False)
-if READ_DOT_ENV_FILE:
-    # OS environment variables take precedence over variables from .env
-    env.read_env(str(BASE_DIR / ".env"))
+APPS_DIR = BASE_DIR / "studyabroadbackend"
+
+env = environ.Env()
+env.read_env(BASE_DIR / ".env")
 
 # GENERAL
 # ------------------------------------------------------------------------------
@@ -24,9 +21,10 @@ DEBUG = env.bool("DJANGO_DEBUG", False)
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # though not all of them may be available with every OS.
 # In Windows, this must be set to your system time zone.
-TIME_ZONE = "UTC+5:30"
+TIME_ZONE = 'Asia/Kolkata'
 # https://docs.djangoproject.com/en/dev/ref/settings/#language-code
 LANGUAGE_CODE = "en-us"
+
 # https://docs.djangoproject.com/en/dev/ref/settings/#languages
 # from django.utils.translation import gettext_lazy as _
 # LANGUAGES = [
