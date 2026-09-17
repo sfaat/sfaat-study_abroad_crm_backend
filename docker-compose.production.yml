@@ -13,7 +13,7 @@ services:
       context: .
       dockerfile: ./compose/production/django/Dockerfile
 
-    image: studyabroadbackend_production_django
+    image: sacrm_production_django
     depends_on:
       - postgres
       - redis
@@ -26,7 +26,7 @@ services:
     build:
       context: .
       dockerfile: ./compose/production/postgres/Dockerfile
-    image: studyabroadbackend_production_postgres
+    image: sacrm_production_postgres
     volumes:
       - production_postgres_data:/var/lib/postgresql/18/docker
       - production_postgres_data_backups:/backups
@@ -37,7 +37,7 @@ services:
     build:
       context: .
       dockerfile: ./compose/production/traefik/Dockerfile
-    image: studyabroadbackend_production_traefik
+    image: sacrm_production_traefik
     depends_on:
       - django
     volumes:
@@ -56,17 +56,17 @@ services:
 
   celeryworker:
     <<: *django
-    image: studyabroadbackend_production_celeryworker
+    image: sacrm_production_celeryworker
     command: /start-celeryworker
 
   celerybeat:
     <<: *django
-    image: studyabroadbackend_production_celerybeat
+    image: sacrm_production_celerybeat
     command: /start-celerybeat
 
   flower:
     <<: *django
-    image: studyabroadbackend_production_flower
+    image: sacrm_production_flower
     command: /start-flower
 
   awscli:

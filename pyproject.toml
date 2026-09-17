@@ -1,5 +1,5 @@
 [project]
-name = "studyabroadbackend"
+name = "sacrm"
 version = "0.1.0"
 description = "This is my project"
 readme = "README.md"
@@ -32,7 +32,7 @@ dependencies = [
   "gunicorn==26.2.0",
   "hiredis==3.4.1",
   "pillow==12.3.0",
-  "psycopg[c]==3.3.5",
+  "psycopg[binary]==3.3.5",
   "python-slugify==8.0.4",
   "redis==8.1.0",
   "uvicorn-worker==0.4.0",
@@ -54,7 +54,7 @@ dev = [
   "ipdb==0.13.13",
   "mypy==2.3.1",
   "pre-commit==4.6.2",
-  "psycopg[c]==3.3.5",
+  "psycopg[binary]==3.3.5",
   "pytest==9.1.1",
   "pytest-django==4.14.0",
   "pytest-sugar==1.1.1",
@@ -167,7 +167,7 @@ python_files = [
 
 # ==== Coverage ====
 [tool.coverage.run]
-include = [ "studyabroadbackend/**" ]
+include = [ "sacrm/**" ]
 omit = [ "*/migrations/*", "*/tests/*" ]
 plugins = [ "django_coverage_plugin" ]
 

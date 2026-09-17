@@ -14,16 +14,16 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
-from studyabroadbackend.users.forms import UserAdminChangeForm
-from studyabroadbackend.users.tests.factories import UserFactory
-from studyabroadbackend.users.views import UserRedirectView
-from studyabroadbackend.users.views import UserUpdateView
-from studyabroadbackend.users.views import user_detail_view
+from sacrm.users.forms import UserAdminChangeForm
+from sacrm.users.tests.factories import UserFactory
+from sacrm.users.views import UserRedirectView
+from sacrm.users.views import UserUpdateView
+from sacrm.users.views import user_detail_view
 
 if TYPE_CHECKING:
     from django.test import RequestFactory
 
-    from studyabroadbackend.users.models import User
+    from sacrm.users.models import User
 
 pytestmark = pytest.mark.django_db
 

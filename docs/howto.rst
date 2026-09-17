@@ -4,7 +4,7 @@ How To - Project Documentation
 Get Started
 ----------------------------------------------------------------------
 
-Documentation can be written as rst files in `studyabroadbackend/docs`.
+Documentation can be written as rst files in `sacrm/docs`.
 
 
 To build and serve docs, use the commands::

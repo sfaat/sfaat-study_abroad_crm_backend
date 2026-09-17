@@ -20,8 +20,8 @@ urlpatterns = [
     # Django Admin, use {% url 'admin:index' %}
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
-    path("users/", include("studyabroadbackend.users.urls", namespace="users")),
-    path("common/", include("studyabroadbackend.common.urls", namespace="common")),
+    path("users/", include("sacrm.users.urls", namespace="users")),
+    path("common/", include("sacrm.common.urls", namespace="common")),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
     # ...

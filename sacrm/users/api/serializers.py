@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from studyabroadbackend.users.models import User
+from sacrm.users.models import User
 
 
 class UserSerializer(serializers.ModelSerializer[User]):

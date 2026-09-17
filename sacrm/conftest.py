@@ -4,10 +4,10 @@ from typing import TYPE_CHECKING
 
 import pytest
 
-from studyabroadbackend.users.tests.factories import UserFactory
+from sacrm.users.tests.factories import UserFactory
 
 if TYPE_CHECKING:
-    from studyabroadbackend.users.models import User
+    from sacrm.users.models import User
 
 
 @pytest.fixture(autouse=True)

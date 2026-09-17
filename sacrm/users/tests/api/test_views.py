@@ -5,10 +5,10 @@ from typing import TYPE_CHECKING
 import pytest
 from rest_framework.test import APIRequestFactory
 
-from studyabroadbackend.users.api.views import UserViewSet
+from sacrm.users.api.views import UserViewSet
 
 if TYPE_CHECKING:
-    from studyabroadbackend.users.models import User
+    from sacrm.users.models import User
 
 
 class TestUserViewSet:

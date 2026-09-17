@@ -1,15 +1,15 @@
 volumes:
-  studyabroadbackend_local_postgres_data: {}
-  studyabroadbackend_local_postgres_data_backups: {}
-  studyabroadbackend_local_redis_data: {}
+  sacrm_local_postgres_data: {}
+  sacrm_local_postgres_data_backups: {}
+  sacrm_local_redis_data: {}
 
 services:
   django: &django
     build:
       context: .
       dockerfile: ./compose/local/django/Dockerfile
-    image: studyabroadbackend_local_django
-    container_name: studyabroadbackend_local_django
+    image: sacrm_local_django
+    container_name: sacrm_local_django
     depends_on:
       - postgres
       - redis
@@ -29,25 +29,25 @@ services:
     build:
       context: .
       dockerfile: ./compose/production/postgres/Dockerfile
-    image: studyabroadbackend_production_postgres
-    container_name: studyabroadbackend_local_postgres
+    image: sacrm_production_postgres
+    container_name: sacrm_local_postgres
     volumes:
-      - studyabroadbackend_local_postgres_data:/var/lib/postgresql/18/docker
-      - studyabroadbackend_local_postgres_data_backups:/backups
+      - sacrm_local_postgres_data:/var/lib/postgresql/18/docker
+      - sacrm_local_postgres_data_backups:/backups
     env_file:
       - path: ./.envs/.local/.postgres
         required: false
 
   redis:
     image: docker.io/redis:7.2
-    container_name: studyabroadbackend_local_redis
+    container_name: sacrm_local_redis
     volumes:
-      - studyabroadbackend_local_redis_data:/data
+      - sacrm_local_redis_data:/data
 
   celeryworker:
     <<: *django
-    image: studyabroadbackend_local_celeryworker
-    container_name: studyabroadbackend_local_celeryworker
+    image: sacrm_local_celeryworker
+    container_name: sacrm_local_celeryworker
     depends_on:
       - redis
       - postgres
@@ -56,8 +56,8 @@ services:
 
   celerybeat:
     <<: *django
-    image: studyabroadbackend_local_celerybeat
-    container_name: studyabroadbackend_local_celerybeat
+    image: sacrm_local_celerybeat
+    container_name: sacrm_local_celerybeat
     depends_on:
       - redis
       - postgres
@@ -66,8 +66,8 @@ services:
 
   flower:
     <<: *django
-    image: studyabroadbackend_local_flower
-    container_name: studyabroadbackend_local_flower
+    image: sacrm_local_flower
+    container_name: sacrm_local_flower
     ports:
       - '5555:5555'
     command: /start-flower

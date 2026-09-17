@@ -2,6 +2,6 @@
 # ------------------------------------------------------------------------------
 POSTGRES_HOST=postgres
 POSTGRES_PORT=5432
-POSTGRES_DB=studyabroadbackend
+POSTGRES_DB=sacrm
 POSTGRES_USER=vfhWXFHZHhXctPpqXKesDUfCHiYusfdO
 POSTGRES_PASSWORD=IWSwa4YN9Pu4IVY6UkzRS5kApsAeJWdAuRp5Nl8Q45ZuMilklcH3QgWygEmPtaqQ

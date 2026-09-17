@@ -8,7 +8,7 @@ import environ
 
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
 
-APPS_DIR = BASE_DIR / "studyabroadbackend"
+APPS_DIR = BASE_DIR / "sacrm"
 
 env = environ.Env()
 env.read_env(BASE_DIR / ".env")
@@ -98,8 +98,8 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    "studyabroadbackend.users",
-    "studyabroadbackend.common",
+    "sacrm.users",
+    "sacrm.common",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -108,7 +108,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 # MIGRATIONS
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#migration-modules
-MIGRATION_MODULES = {"sites": "studyabroadbackend.contrib.sites.migrations"}
+MIGRATION_MODULES = {"sites": "sacrm.contrib.sites.migrations"}
 
 # AUTHENTICATION
 # ------------------------------------------------------------------------------
@@ -204,7 +204,7 @@ TEMPLATES = [
                 "django.template.context_processors.static",
                 "django.template.context_processors.tz",
                 "django.contrib.messages.context_processors.messages",
-                "studyabroadbackend.users.context_processors.allauth_settings",
+                "sacrm.users.context_processors.allauth_settings",
             ],
         },
     },
@@ -331,13 +331,13 @@ ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 # https://docs.allauth.org/en/latest/account/configuration.html
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 # https://docs.allauth.org/en/latest/account/configuration.html
-ACCOUNT_ADAPTER = "studyabroadbackend.users.adapters.AccountAdapter"
+ACCOUNT_ADAPTER = "sacrm.users.adapters.AccountAdapter"
 # https://docs.allauth.org/en/latest/account/forms.html
-ACCOUNT_FORMS = {"signup": "studyabroadbackend.users.forms.UserSignupForm"}
+ACCOUNT_FORMS = {"signup": "sacrm.users.forms.UserSignupForm"}
 # https://docs.allauth.org/en/latest/socialaccount/configuration.html
-SOCIALACCOUNT_ADAPTER = "studyabroadbackend.users.adapters.SocialAccountAdapter"
+SOCIALACCOUNT_ADAPTER = "sacrm.users.adapters.SocialAccountAdapter"
 # https://docs.allauth.org/en/latest/socialaccount/configuration.html
-SOCIALACCOUNT_FORMS = {"signup": "studyabroadbackend.users.forms.UserSocialSignupForm"}
+SOCIALACCOUNT_FORMS = {"signup": "sacrm.users.forms.UserSocialSignupForm"}
 
 # django-rest-framework
 # -------------------------------------------------------------------------------

@@ -6,7 +6,7 @@ from django.urls import resolve
 from django.urls import reverse
 
 if TYPE_CHECKING:
-    from studyabroadbackend.users.models import User
+    from sacrm.users.models import User
 
 
 def test_detail(user: User):

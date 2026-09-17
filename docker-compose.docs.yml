@@ -1,7 +1,7 @@
 services:
   docs:
-    image: studyabroadbackend_local_docs
-    container_name: studyabroadbackend_local_docs
+    image: sacrm_local_docs
+    container_name: sacrm_local_docs
     build:
       context: .
       dockerfile: ./compose/local/docs/Dockerfile
@@ -12,7 +12,7 @@ services:
       - /app/.venv
       - ./docs:/docs:z
       - ./config:/app/config:z
-      - ./studyabroadbackend:/app/studyabroadbackend:z
+      - ./sacrm:/app/sacrm:z
     ports:
       - '9000:9000'
     command: /start-docs

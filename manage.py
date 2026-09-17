@@ -20,9 +20,9 @@ def main():
         ) from exc
 
     # This allows easy placement of apps within the interior
-    # studyabroadbackend directory.
+    # sacrm directory.
     current_path = Path(__file__).parent.resolve()
-    sys.path.append(str(current_path / "studyabroadbackend"))
+    sys.path.append(str(current_path / "sacrm"))
 
     execute_from_command_line(sys.argv)
 
